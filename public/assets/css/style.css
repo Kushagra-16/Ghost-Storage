@@ -1,0 +1,205 @@
+@font-face {
+    font-family: "Varela Round";
+    src: url("/Ghost-Storage/assets/resources/fonts/VarelaRound-Regular.ttf");
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--font-family);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--body-bg);
+}
+
+header {
+    background-color: var(--item-bg);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    width: -webkit-fill-available;
+    box-shadow: 0px 10px 10px 0px var(--color-primary);
+
+    input {
+        flex-grow: 1;
+        margin: 0px 15px;
+        height: 30px;
+        padding: 0px 10px;
+        text-align: middle;
+        color: var(--font-color);
+        border-radius: 1000px;
+        border: none;
+        outline: none;
+        background-color: var(--color-primary);
+    }
+
+    button {
+        background: transparent;
+        border: none;
+    }
+}
+
+div#main {
+    padding: 75px 10px 40px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--item-minmax-width), 1fr));
+    grid-gap: 15px;
+
+    div.item {
+        padding: 15px;
+        border-radius: 10px;
+        background-color: var(--item-bg);
+        display: flex;
+        align-items: center;
+        cursor: default;
+        text-wrap: nowrap;
+
+        i.item_icon {
+            font-size: var(--item-icon-size);
+        }
+
+        span.item_name {
+            margin: 0px 10px 0px 15px;
+            font-weight: var(--item-name-weight);
+            flex-grow: 1;
+            color: var(--item-name-color);
+            font-size: var(--item-name-size);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            text-wrap: nowrap;
+        }
+
+        span.item_size {
+            font-size: var(--item-size-size);
+            color: var(--item-size-color);
+        }
+    }
+
+    div.item:hover {
+        background-color: var(--item-hover-bg);
+    }
+
+    div.hidden_item {
+        display: none;
+        opacity: 0.4;
+    }
+
+    div.item.item-new-folder {
+        svg.item_icon {
+            width: 25px;
+            height: 25px;
+            color: white;
+            padding-right: 15px;
+        }
+        input.item_name {
+            background: transparent;
+            border: none;
+            width: 80%;
+            outline: none;
+            color: white;
+            font-size: 18px;
+            padding-left: 5px;
+        }
+        input.item_name:focus-visible {
+            border-bottom: 1px solid darkgray;
+        }
+    }
+}
+
+div#path_container {
+    position: fixed;
+    bottom: 0px;
+    padding: 3px;
+    width: -webkit-fill-available;
+    background-color: var(--color-secondary);
+    box-shadow: 0px -10px 10px 0px var(--color-primary);
+    
+    span#path {
+        display: block;
+        text-align: center;
+        color: var(--font-color);
+    }
+}
+
+div#file_updown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background: var(--item-hover-bg);
+    width: 70%;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px black;
+    color: white;
+    visibility: hidden;
+
+    div#updown_files {
+        gap: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div#updown_total {
+        display: flex;
+        height: 20px;
+        background: var(--body-bg);
+        width: 70%;
+        border-radius: 100px;
+        margin: 10px;
+        overflow: hidden;
+
+        div#updown_progress {
+            width: 0%;
+            height: 100%;
+            background: var(--font-color);
+            border-radius: 100px;
+            transition: 0.1s linear;
+        }
+    }
+}
+
+ul.context-menu {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    background: var(--color-secondary);
+    color: darkgray;
+    padding: 5px;
+    list-style: none;
+    border-radius: 10px;
+    width: 150px;
+    font-size: 16px;
+    box-shadow: 0px 0px 10px 0px black;
+
+    li {
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: default;
+
+        svg {
+            padding-right: 5px;
+            position: relative;
+            top: 2px;
+        }
+    }
+
+    li:hover {
+        background: var(--item-hover-bg);
+    }
+}
