@@ -1,1 +1,1 @@
-import "./icons.css"
+import "../temp/icons.css"
