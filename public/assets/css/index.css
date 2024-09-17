@@ -11,10 +11,7 @@
     font-family: var(--font-family);
 }
 
-html,
-body {
-    height: 100%;
-}
+html, body { height: 100%; }
 
 body {
     background-color: var(--body-bg);
@@ -24,12 +21,10 @@ body {
         display: none;
         color: var(--item-size-color);
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 50%; left: 50%; gap: 20px;
         transform: translate(-50%, -50%);
         font-size: var(--item-name-size);
         text-align: center;
-        gap: 20px;
         flex-direction: column;
         align-items: center;
     }
@@ -37,31 +32,26 @@ body {
 
 header {
     background-color: var(--item-bg);
-    padding: 15px;
-    display: flex;
+    padding: 15px; z-index: 10;
+    display: flex; position: fixed;
     align-items: center;
-    position: fixed;
-    z-index: 10;
     width: -webkit-fill-available;
     box-shadow: 0px 10px 10px 0px var(--color-primary);
 
     input {
         flex-grow: 1;
-        margin: 0px 7px;
-        height: 30px;
+        margin: 0px 7px; height: 30px;
         padding: 0px 10px;
         text-align: middle;
         color: var(--font-color);
         border-radius: 1000px;
-        border: none;
-        outline: none;
+        border: none; outline: none;
         background-color: var(--color-primary);
     }
 
     button {
         background: transparent;
-        border: none;
-        margin: 0px 7px;
+        border: none; margin: 0px 7px;
     }
 
     h1#_title {
@@ -74,17 +64,14 @@ header {
 
 div#main {
     padding: 75px 10px 40px 10px;
-    display: grid;
+    display: grid; grid-gap: 15px;
     grid-template-columns: repeat(auto-fill, minmax(var(--item-minmax-width), 1fr));
-    grid-gap: 15px;
 
     div.item {
-        padding: 15px;
-        border-radius: 10px;
+        padding: 15px; border-radius: 10px;
         background-color: var(--item-bg);
-        display: flex;
+        display: flex; cursor: default;
         align-items: center;
-        cursor: default;
         text-wrap: nowrap;
 
         i.item_icon {
@@ -109,54 +96,35 @@ div#main {
 
         input.item_name {
             background: transparent;
-            border: none;
-            width: 80%;
-            outline: none;
-            color: white;
-            font-size: 18px;
-            padding-left: 5px;
+            border: none; width: 80%;
+            outline: none; color: white;
+            font-size: 18px; padding-left: 5px;
 
-            &:focus-visible {
-                border-bottom: 1px solid darkgray;
-            }
+            &:focus-visible { border-bottom: 1px solid darkgray; }
         }
-
 
         button {
             background-color: transparent;
-            border: none;
-            margin-left: 10px;
+            border: none; margin-left: 10px;
             color: darkgray;
         }
 
-        button:hover {
-            color: white;
-        }
+        button:hover { color: white; }
 
-        &:hover {
-            background-color: var(--item-hover-bg);
-        }
-
+        &:hover { background-color: var(--item-hover-bg); }
 
         &.item-new-folder {
             svg.item_icon {
-                width: 25px;
-                height: 25px;
-                color: white;
-                padding-right: 15px;
+                width: 25px; height: 25px;
+                color: white; padding-right: 15px;
             }
         }
     }
 
-
-    div.hidden_item {
-        opacity: 0.4;
-    }
+    div.hidden_item { opacity: 0.4; }
 }
 
-div#main-template {
-    display: none;
-}
+div#main-template { display: none; }
 
 footer {
     position: fixed;
@@ -185,12 +153,10 @@ footer {
 
 div#file_updown {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     translate: -50% -50%;
     background: var(--item-hover-bg);
-    width: 70%;
-    padding: 50px;
+    width: 70%; padding: 50px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -258,14 +224,11 @@ ul.context-menu {
             top: 2px;
         }
 
-        &:hover {
-            background: var(--item-hover-bg);
-        }
+        &:hover { background: var(--item-hover-bg); }
     }
 
     hr {
-        margin: 5px 0px;
-        border: none;
+        margin: 5px 0px; border: none;
         border-bottom: 1px solid gray;
     }
 }
@@ -273,16 +236,13 @@ ul.context-menu {
 div#preview_popup {
     position: absolute;
     visibility: hidden;
-    height: 100%;
-    z-index: 100;
-    top: 0px;
+    height: 100%; width: 100%;
+    z-index: 100; top: 0px;
     background: var(--body-bg);
     color: var(--font-color);
-    width: 100%;
 
     div#preview_popup_header {
-        display: flex;
-        height: auto;
+        display: flex; height: auto;
         padding: 10px 15px;
         box-shadow: 0px 0px 10px 0px black;
 
@@ -310,21 +270,16 @@ div#preview_popup {
 
         span#preview_loading_icon {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 50%; left: 50%;
             height: 16px;
+            transform: translate(-50%, -50%);
             animation: loadingRotation 2s linear infinite forwards;
         }
 
         img {
-            display: none;
-        }
-
-        img {
+            direction: none;;
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             max-height: 100%;
             max-width: 100%;
@@ -335,8 +290,7 @@ div#preview_popup {
 div#login_page {
     color: var(--item-size-color);
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     max-width: 55%;
     display: none;
@@ -345,19 +299,16 @@ div#login_page {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
-        margin: 10px;
+        gap: 10px; margin: 10px;
     }
 
     input#password_input {
-        margin: 10px;
-        height: 30px;
+        margin: 10px; height: 30px;
         padding: 0px 10px;
         text-align: center;
         color: var(--font-color);
         border-radius: 1000px;
-        border: none;
-        outline: none;
+        border: none; outline: none;
         background-color: var(--color-secondary);
         width: -webkit-fill-available;
 
@@ -366,48 +317,21 @@ div#login_page {
             box-shadow: 0px 0px 7px 0px red;
         }
 
-        &::-ms-reveal {
-            filter: invert(100%);
-        }
+        &::-ms-reveal { filter: invert(100%); }
     }
 }
 
 @keyframes loadingRotation {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    50% {
-        transform: translate(-50%, -50%) rotate(180deg);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    50% { transform: translate(-50%, -50%) rotate(180deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 @keyframes wrongPasswordShake {
-    0% {
-        transform: translateX(0px);
-    }
-
-    20% {
-        transform: translateX(5px);
-    }
-
-    40% {
-        transform: translateX(-5px);
-    }
-
-    60% {
-        transform: translateX(5px);
-    }
-
-    80% {
-        transform: translateX(-5px);
-    }
-
-    100% {
-        transform: translateX(0px);
-    }
+    0% { transform: translateX(0px); }
+    20% { transform: translateX(5px); }
+    40% { transform: translateX(-5px); }
+    60% { transform: translateX(5px); }
+    80% { transform: translateX(-5px); }
+    100% { transform: translateX(0px); }
 }
