@@ -74,9 +74,7 @@ div#main {
         align-items: center;
         text-wrap: nowrap;
 
-        i.item_icon {
-            font-size: var(--item-icon-size);
-        }
+        i.item_icon { font-size: var(--item-icon-size); }
 
         span.item_name {
             margin: 0px 10px 0px 15px;
