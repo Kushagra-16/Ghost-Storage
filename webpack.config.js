@@ -4,7 +4,7 @@ module.exports = {
     mode: "production",
     entry: {
         script: "./src/script.ts",
-        icons: "./src/icons.js"
+        // icons: "./src/icons.js"
     },
     output: {
         path: path.resolve(__dirname, 'public/assets'),

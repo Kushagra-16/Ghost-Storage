@@ -1,5 +1,4 @@
 import { DataItem, IconsData } from "./types";
-import { TokenManager } from "../temp/token_manager";
 
 let iconsData: IconsData;
 const openable: string[] = [
