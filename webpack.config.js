@@ -7,8 +7,8 @@ module.exports = {
         // icons: "./src/icons.js"
     },
     output: {
-        path: path.resolve(__dirname, 'public/assets'),
-        filename: 'js/[name].bundle.js',
+        path: path.resolve(__dirname, './temp/js/dist'),
+        filename: '[name].bundle.js',
     },
     module: {
         rules: [
