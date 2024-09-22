@@ -1,5 +1,4 @@
 import { DataItem, IconsData } from "./types";
-import { TokenManager } from "../temp/token_manager";
 
 let iconsData: IconsData;
 const openable: string[] = [
@@ -96,7 +95,7 @@ export namespace utils {
         }
     }
 
-    export function getPreviewType(filename: string): string {
+    export function getPreviewType(filename: string): string | undefined {
         const fileExtension = filename.split(".").pop()
         for (const type in previewTypes)
             for (const ext of previewTypes[type])

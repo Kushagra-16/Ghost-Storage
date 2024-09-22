@@ -4,10 +4,10 @@ module.exports = {
     mode: "production",
     entry: {
         script: "./src/script.ts",
-        icons: "./src/icons.js"
+        // icons: "./src/icons.js"
     },
     output: {
-        path: path.resolve(__dirname, 'public/assets'),
+        path: path.resolve(__dirname, './public/assets/'),
         filename: 'js/[name].bundle.js',
     },
     module: {
@@ -24,7 +24,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", 
+                use: [ "style-loader",
                     {
                         loader: "css-loader",
                         options: {

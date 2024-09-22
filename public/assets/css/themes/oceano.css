@@ -1,0 +1,16 @@
+:root {
+    --color-primary: #080615;
+    --color-secondary: #0f2039;
+    --body-bg: var(--color-primary);
+    --font-family: "Varela Round";
+    --font-color: #FFFFFF;
+    --item-bg: var(--color-secondary);
+    --item-hover-bg: #0b2156;
+    --item-minmax-width: 300px;
+    --item-icon-size: 30px;
+    --item-name-color: var(--font-color);
+    --item-name-size: large;
+    --item-name-weight: normal;
+    --item-size-color: #5d8ca3;
+    --item-size-size: small;
+}
