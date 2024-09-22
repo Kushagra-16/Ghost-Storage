@@ -46,7 +46,6 @@ jobs:
         run: |
             mkdir -p ./public/assets/js
             npm run build
-            cp ./temp/js/dist/* ./public/assets/js/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
