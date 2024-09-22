@@ -15,7 +15,7 @@ html, body { height: 100%; }
 
 body {
     background-color: var(--body-bg);
-    overflow: hidden;
+    /* overflow: hidden; */
 
     > span#auth_fail,
     > span#empty_folder {

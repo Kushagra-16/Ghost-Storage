@@ -200,7 +200,11 @@ async function displayFolderContents(data: DataItem[], home: boolean) {
                 btoa("{}")
             )
     })
-    if (data.length == 1 && !adminMode) { document.getElementById("empty_folder").style.display = "flex"; return; }
+    if (data.length == 1 && !adminMode) {
+        document.getElementById("loading_icon").style.display = "none";
+        document.getElementById("empty_folder").style.display = "flex";
+        return;
+    }
     else { document.getElementById("empty_folder").style.display = "none" }
     for (const item of data) {
         const element = document.createElement("div");
