@@ -281,7 +281,7 @@ async function displayFolderContents(data: DataItem[], home: boolean) {
 }
 
 async function loadFolderContents(folderPath: string) {
-    document.getElementById("main").innerHTML = document.getElementById("main-template").innerHTML
+    document.getElementById("main").innerHTML = ""
     document.getElementById("loading_icon").style.display = "flex";
     const pathElem = document.getElementById("path")
     pathElem.innerText = (folderPath != "") ? `/ ${folderPath.replace(/\//g, " / ")}` : ""
@@ -293,6 +293,7 @@ async function loadFolderContents(folderPath: string) {
     let data: DataItem[];
     if (response.status === 200) { etagCache[url] = response.headers.get("ETag"); data = await response.json(); etagCache[`${url}_data`] = data; }
     else if (response.status === 304) { data = etagCache[`${url}_data`]; }
+    document.getElementById("main").innerHTML = document.getElementById("main-template").innerHTML;
     displayFolderContents(data, folderPath == "");
 }
 
