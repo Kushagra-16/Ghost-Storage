@@ -1,32 +1,50 @@
 import { DataItem, IconsData } from "./types";
 
 let iconsData: IconsData;
+let githubToken: string;
+let username: string;
+let repo: string;
+
 const openable: string[] = [
-    "image", /* "video" , "audio", "pdf", "html", "python", "css",
-    "js", "javascript","json", "xml", "yml", "yaml", "conf",
+    "image", "video" , "audio", "pdf", "html", "python", "css",
+    "js", "javascript", "json", "xml", "yml", "yaml", "conf",
     "config", "c", "cpp", "h", "hpp", "java", "sh", "bat", "php",
-    "sql", "txt", "text", "ino", "arduino", "gcode" */
+    "sql", "txt", "text", "ino", "arduino", "gcode", "svg", "md"
 ]
 const previewTypes: { [key: string]: string[] } = {
     "image": ["png", "jpg", "jpeg", "gif", "svg", "webm"],
     "video": ["mp4", "ogg", "ogv", "avi", "mov", "wmv", "flv", "mkv", "m2ts"],
     "audio": ["mp3", "wav", "ogg", "oga", "m4a", "flac", "aac", "wma", "mid", "midi"],
     "pdf": ["pdf"],
-    "text": ["log", "txt", "md"],
     "cod": [
         "html", "py", "pyw", "htm", "css", "js", "json", "xml", "yml", "yaml",
         "ini", "conf", "c", "cpp", "h", "hpp", "java", "sh", "bat", "php",
-        "sql", "txt", "text", "ino"
+        "sql", "txt", "text", "ino", "md", "ino", "gcode", "log", "md"
     ]
 }
 
 export namespace utils {
 
-    export function setup(iconsDataObj: IconsData) { iconsData = iconsDataObj; }
+    export function setup(iconsDataObj: IconsData, githubInfo: { token: string, username: string, repo: string }) {
+        iconsData = iconsDataObj;
+        githubToken = githubInfo.token;
+        username = githubInfo.username;
+        repo = githubInfo.repo;
+    }
 
-    export function getIcon(item: DataItem): { iconName: string, subparts?: number } {
+    export async function api(method: string, url: string, body?: any) {
+        const params: RequestInit = {
+            method: method, cache: "no-store",
+            headers: { Authorization: `Bearer ${githubToken}`, Accept: "application/json" }
+        }
+        if (body) params.body = JSON.stringify(body);
+        const response = await fetch(`https://api.github.com/repos/${username}/${repo}${url}`, params);
+        return await response.json();
+    }
+
+    export function getIcon(item: DataItem | {name: string, type: string}, isFile?: boolean, isOpen?: boolean): { iconName: string, subparts?: number } {
         let iconInfo: { iconName: string, subparts?: number };
-        if (item.type === "file") {
+        if (item.type === "file" || isFile) {
             let icon = iconsData.defined.file;
             for (const name in iconsData.fileNames)
                 if (Object.prototype.hasOwnProperty.call(iconsData.fileNames, name))
@@ -50,7 +68,7 @@ export namespace utils {
                     if (name.toLowerCase() == item.name.toLowerCase())
                         icon = iconsData.folderNames[name]
             iconInfo = {
-                iconName: icon,
+                iconName: isOpen ? icon+"-open" : icon,
                 subparts: (iconsData.iconSubparts[icon] > 1) ? iconsData.iconSubparts[icon] : undefined
             }
         }

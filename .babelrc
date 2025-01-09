@@ -1,0 +1,18 @@
+{
+    "plugins": [
+        [
+            "prismjs",
+            {
+                "languages": [
+                    "js", "css", "html", "xml", "svg", "ino", "sh", "batch",
+                    "c", "cs", "cpp", "gcode", "git", "ld", "gradle", "haml",
+                    "java", "json", "kt", "kts", "log", "lua", "makefile", "md",
+                    "perl", "php", "properties", "py", "tsconfig"
+                ],
+                "plugins": ["line-numbers"],
+                "css": true
+            }
+        ],
+        "@babel/plugin-transform-modules-commonjs"
+    ]
+}
