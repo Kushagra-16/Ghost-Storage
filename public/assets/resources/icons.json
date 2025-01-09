@@ -825,6 +825,7 @@
         "folder-root-open": "folder-root-open"
     },
     "folderNames": {
+        ".ghost.utils": "folder-config",
         "bot": "folder-robot",
         "robot": "folder-robot",
         ".bot": "folder-robot",
@@ -1475,7 +1476,7 @@
         ".taskfiles": "folder-taskfile"
     },
     "fileNames": {
-        ".ghost": "json",
+        ".ghost": "settings",
         ".pug-lintrc": "pug",
         ".pug-lintrc.js": "pug",
         ".pug-lintrc.json": "pug",
@@ -2550,6 +2551,8 @@
         "esbuild.config.mjs": "esbuild"
     },
     "fileExtensions": {
+        "ts": "typescript",
+        "js": "javascript",
         "htm": "html",
         "xhtml": "html",
         "html_vm": "html",

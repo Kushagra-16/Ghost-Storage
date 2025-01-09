@@ -1,3 +1,8 @@
+export enum DataItemType {
+    file = "file",
+    dir = "dir"
+}
+
 export interface DataItem {
     name: string,
     path: string,
@@ -7,7 +12,7 @@ export interface DataItem {
     html_url: string,
     git_url: string,
     download_url: string,
-    type: string,
+    type: DataItemType,
     content: string,
     encoding: string,
     _links: {
@@ -40,7 +45,7 @@ export interface TreeData {
 
 export interface GhostData {
     hidden?: Array<String>,
-    folder_path: string
+    lf?: Array<String>
 }
 
 export interface IconsData {
@@ -49,4 +54,10 @@ export interface IconsData {
     fileNames: { [key: string]: string }
     fileExtensions: { [key: string]: string },
     iconSubparts: { [key: string]: number }
+}
+
+export interface DroppedItem {
+    name: string,
+    sha: string,
+    type: string
 }

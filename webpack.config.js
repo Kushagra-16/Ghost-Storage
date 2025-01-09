@@ -4,7 +4,8 @@ module.exports = {
     mode: "production",
     entry: {
         script: "./src/script.ts",
-        // icons: "./src/icons.js"
+        // highlight: "./src/highlight.js",
+        icons: "./src/icons.js"
     },
     output: {
         path: path.resolve(__dirname, './public/assets/'),
@@ -32,12 +33,21 @@ module.exports = {
                         }
                     }
                 ],
-                exclude: /node_modules/
+                exclude: /node_modules\/(?!prismjs)/
             }
         ]
     },
     resolve: {
         extensions: [".ts", ".js"],
         modules: ["node_modules", "src"]
-    }
+    },
+    plugins: [
+        {
+            apply: (compiler) => {
+                compiler.hooks.done.tap('LineBreakPlugin', () => {
+                    console.log('');
+                  });
+            }
+        }
+    ]
 };

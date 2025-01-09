@@ -1,0 +1,63 @@
+:root {
+    --color-primary: #ffffff;
+    --color-secondary: #e4e4e4;
+    --body-bg: var(--color-primary);
+    --font-family: "Varela Round";
+    --font-color: #000000;
+    --item-bg: var(--color-secondary);
+    --item-hover-bg: #c2c2c2;
+    --item-minmax-width: 300px;
+    --item-icon-size: 30px;
+    --item-name-color: var(--font-color);
+    --item-name-size: large;
+    --item-name-weight: normal;
+    --item-size-color: #808080;
+    --item-size-size: small;
+}
+
+code[class*="language-"], pre[class*="language-"] { text-align: left; white-space: pre; word-spacing: normal; word-break: normal; word-wrap: normal; color: #5c6166; background: #f8f9fa; font-family: Roboto Mono, monospace; font-size: 1em; line-height: 1.5em; -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4; -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none;}
+code[class*="language-"]::-moz-selection, pre[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection, pre[class*="language-"] ::-moz-selection {background: #035bd626;}
+code[class*="language-"]::selection, pre[class*="language-"]::selection, code[class*="language-"] ::selection, pre[class*="language-"] ::selection {background: #035bd626;}
+:not(pre) > code[class*="language-"] {white-space: normal; border-radius: 0.2em; padding: 0.1em;}
+pre[class*="language-"] {overflow: auto; position: relative; margin: 0.5em 0; padding: 1.25em 1em;}
+.language-css > code, .language-sass > code, .language-scss > code {color: #399ee6;} [class*="language-"] .namespace {opacity: 0.7;}
+.token.comment {color: #787b8099; font-style: italic;}
+.token.string {color: #86b300;}
+.token.regex {color: #4cbf99;}
+.token.number {color: #a37acc;}
+.token.builtin {color: #a37acc;}
+.token.variable {color: #5c6166;} 
+.token.keyword {color: #fa8d3e;}
+.token.operator {color: #ed9366;}
+.token.punctuation {color: #5c6166;}
+.token.class-name {color: #55b4d4;}
+.token.class {color: #55b4d4;}
+.token.function {color: #f2ae49;}
+.token.parameter {color: #a37acc}
+.token.attribute {color: #a37acc;}
+.token.tag {color: #55b4d4;}
+.token.constant {color: #ed9366;}
+.token.decorator {color: #e6ba7e;}
+.token.property {color: #55b4d4;}
+.token.url {text-decoration: underline;}
+/* .token.atrule {color: #c792ea;}
+.token.attr-name {color: #ffcb6b;}
+.token.attr-value {color: #a5e844;}
+.token.boolean {color: #c792ea;}
+.token.cdata {color: #80cbc4;}
+.token.char {color: #80cbc4;}
+.token.deleted {color: #ff6666;}
+.token.doctype {color: #616161;}
+.token.entity {color: #ff6666;}
+.token.hexcode {color: #f2ff00;}
+.token.id {color: #c792ea; font-weight: bold;}
+.token.important {color: #c792ea; font-weight: bold;}
+.token.inserted {color: #80cbc4;}
+.token.prolog {color: #616161;}
+.token.property {color: #80cbc4;}
+.token.pseudo-class {color: #a5e844;}
+.token.pseudo-element {color: #a5e844;}
+.token.selector {color: #ff6666;}
+.token.symbol {color: #c792ea;}
+.token.unit {color: #fd9170;}
+.token.url {color: #ff6666;} */
