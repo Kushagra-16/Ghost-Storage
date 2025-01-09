@@ -3,9 +3,8 @@ const path = require('path');
 module.exports = {
     mode: "production",
     entry: {
-        script: "./src/script.ts",
-        // highlight: "./src/highlight.js",
-        icons: "./src/icons.js"
+        script: "./src/script.ts"
+        // icons: "./src/icons.js"
     },
     output: {
         path: path.resolve(__dirname, './public/assets/'),
